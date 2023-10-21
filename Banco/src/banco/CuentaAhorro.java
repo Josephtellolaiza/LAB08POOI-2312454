@@ -1,39 +1,51 @@
 package banco;
-import java.util.Arrays;
-public class CuentaAhorro {
-		private double tasaInteresAnual;
-	    private String[] beneficios;
 
-	    public CuentaAhorro(double tasaInteresAnual, String[] beneficios) {
-	        this.tasaInteresAnual = tasaInteresAnual;
-	        this.beneficios = beneficios;
-	    }
+import java.util.List;
+import java.util.ArrayList;
 
-	    public double getTasaInteresAnual() {
-	        return tasaInteresAnual;
-	    }
+public class CuentaAhorro extends CuentaBancaria
+{
+	private double tasaInteresAnual = 3;
+    private List<String> beneficios = new ArrayList<String>();
+    
 
-	    public void setTasaInteresAnual(double tasaInteresAnual) {
-	        this.tasaInteresAnual = tasaInteresAnual;
-	    }
 
-	    public String[] getBeneficios() {
-	        return beneficios;
-	    }
-
-	    public void setBeneficios(String[] beneficios) {
-	        this.beneficios = beneficios;
-	    }
-
-	    public double getCuentaAhorro() {
-	        
-	        return 0.0;
-	    }
-
-	    public String toString() {
-	        return "Tasa de Interés Anual: " + tasaInteresAnual + "%\nBeneficios: " + Arrays.toString(beneficios);
-	    }
+    public CuentaAhorro(String numCuenta, String descripcion, String cuentaCCI, Cliente cliente,
+			double tasaInteresAnual, List<String> beneficios) 
+    {
+		super(numCuenta, descripcion, cuentaCCI, cliente);
+		this.tasaInteresAnual = tasaInteresAnual;
+		this.beneficios = beneficios;
 	}
+    
+	public void calcularInteresMensual()
+	{
+		double interesMensual;
+		double saldoDisponible;
+		double tasaInteresAnual;
+		
+		saldoDisponible = getSaldoDisponible();
+		tasaInteresAnual = this.tasaInteresAnual;
+		
+		interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
+		saldoDisponible += interesMensual;
+	}
+	
+    public List<String> getBeneficios() 
+    {
+		return beneficios;
+	}
+
+	public void setBeneficios(List<String> beneficios) 
+	{
+		this.beneficios = beneficios;
+	}
+
+	@Override
+	public String toString() {
+		return "CuentaAhorro [tasaInteresAnual=" + tasaInteresAnual + ", beneficios=" + beneficios + "]";
+	}
+}
 		    
 		
 

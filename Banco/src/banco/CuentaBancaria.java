@@ -1,23 +1,25 @@
 package banco;
 
-public class CuentaBancaria 
+import java.util.List;
+import java.util.ArrayList;
+
+public abstract class CuentaBancaria 
 {
 	private String numeroCuenta;
 	private String descripcionCuenta;
 	private String cuentaCCI;
 	private double saldoDisponible = 0;
-	//private MovimientosCuenta movimientos = new MovimientoCuenta();
+	private List<MovimientoCuenta> movimientos = new ArrayList<MovimientoCuenta>();
 	private String estado;
 	
-	public CuentaBancaria(String numCuenta, String descripcion, String cuentaCCI/*, Cliente cliente*/) 
+	public CuentaBancaria(String numCuenta, String descripcion, String cuentaCCI, Cliente cliente) 
 	{
-		this.numeroCuenta = numeroCuenta;
-		this.descripcionCuenta = descripcionCuenta;
+		this.numeroCuenta = numCuenta;
+		this.descripcionCuenta = descripcion;
 		this.cuentaCCI = cuentaCCI;
 	}
  
-	public void calcularInteresMensual()
-	{}
+	public abstract void calcularInteresMensual();
 
 	public String getNumeroCuenta() 
 	{
@@ -59,11 +61,11 @@ public class CuentaBancaria
 		this.saldoDisponible = saldoDisponible;
 	}
 
-	/*public MovimientosCuenta[]()
+	public List<MovimientoCuenta> getMovimientos() 
 	{
 		return movimientos;
-	}*/
-	
+	}
+
 	@Override
 	public String toString() 
 	{
