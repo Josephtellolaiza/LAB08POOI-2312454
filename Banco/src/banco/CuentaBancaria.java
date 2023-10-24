@@ -70,6 +70,7 @@ public abstract class CuentaBancaria
 	public String toString() 
 	{
 		return "CuentaBancaria [numeroCuenta=" + numeroCuenta + ", descripcionCuenta=" + descripcionCuenta
-				+ ", cuentaCCI=" + cuentaCCI + ", saldoDisponible=" + saldoDisponible + ", estado=" + estado + "]";
+				+ ", cuentaCCI=" + cuentaCCI + ", saldoDisponible=" + saldoDisponible + ", movimientos=" + movimientos
+				+ ", estado=" + estado + "]";
 	}
 }

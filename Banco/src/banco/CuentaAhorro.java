@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class CuentaAhorro extends CuentaBancaria
 {
-	private double tasaInteresAnual = 3;
+	private double tasaInteresAnual = 0.03;
     private List<String> beneficios = new ArrayList<String>();
     
 
@@ -29,6 +29,7 @@ public class CuentaAhorro extends CuentaBancaria
 		
 		interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
 		saldoDisponible += interesMensual;
+		this.setSaldoDisponible(saldoDisponible);
 	}
 	
     public List<String> getBeneficios() 

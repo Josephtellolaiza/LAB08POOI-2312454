@@ -22,6 +22,7 @@ public class CuentaCTS extends CuentaBancaria
 			
 			interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
 			saldoDisponible += interesMensual;
+			this.setSaldoDisponible(saldoDisponible);
 		}
 		
 		public double getPuntos() {

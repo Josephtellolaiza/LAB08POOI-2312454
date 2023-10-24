@@ -94,10 +94,25 @@ public class Cliente {
 		this.cuentas = cuentas;
 	}
 
+	
+	public List<EventoBancario> getEventosBancarios() 
+	{
+		return eventosBancarios;
+	}
+
+	public void setEventosBancarios(List<EventoBancario> eventosBancarios) 
+	{
+		this.eventosBancarios = eventosBancarios;
+	}
+
 	@Override
 	public String toString() 
 	{
 		return "Cliente [idCliente=" + idCliente + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion="
-				+ direccion + ", telefono=" + telefono + ", dni=" + dni + "]";
+				+ direccion + ", telefono=" + telefono + ", dni=" + dni + ", cuentas=" + cuentas + ", eventosBancarios="
+				+ eventosBancarios + "]";
 	}
+
+	
+	
 }

@@ -23,6 +23,7 @@ public class CuentaCorriente extends CuentaBancaria
 		
 		interesMensual = (saldoDisponible * tasaInteresAnual) / 12;
 		saldoDisponible += interesMensual;
+		this.setSaldoDisponible(saldoDisponible);
 	}
     
 	public int getMaxRetiro() 

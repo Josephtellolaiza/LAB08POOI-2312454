@@ -2,8 +2,8 @@ package banco;
 
 import java.util.Date;
 
-public class EventoBancario {
-
+public class EventoBancario 
+{
 	Date fecha;
 	String tituloEvento;
 	String descripcionEvento;

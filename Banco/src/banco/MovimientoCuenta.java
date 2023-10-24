@@ -68,17 +68,13 @@ public class MovimientoCuenta
 	    {
 	        this.tipoOperacion = tipoOperacion;
 	    }
-	   
-	    public String toString() 
-	    {
-	        return "MovimientoCuenta{" +
-	                "numOperacion='" + numOperacion + '\'' +
-	                ", descripcion='" + descripcion + '\'' +
-	                ", fecha=" + fecha +
-	                ", importe=" + importe +
-	                ", tipoOperacion='" + tipoOperacion + '\'' +
-	                '}';
-	    }
+
+		@Override
+		public String toString() 
+		{
+			return "MovimientoCuenta [numOperacion=" + numOperacion + ", descripcion=" + descripcion + ", fecha="
+					+ fecha + ", importe=" + importe + ", tipoOperacion=" + tipoOperacion + "]";
+		}
 	}
   
 
